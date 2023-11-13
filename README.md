@@ -1,6 +1,7 @@
 # project2
 Team members: 
 
-  Naha 
+  Maha 
   
   Zhao
+
