@@ -6,16 +6,16 @@
 CREATE TABLE "compaign" (
     "cd_id" INT   NOT NULL,
     "contact_id" INT   NOT NULL,
-    "company_name" VARCHAR(25)   NOT NULL,
-    "description" VARCHAR(25)   NOT NULL,
+    "company_name" VARCHAR(100)   NOT NULL,
+    "description" VARCHAR(100)   NOT NULL,
     "goal" float   NOT NULL,
     "pledged" float   NOT NULL,
     "outcome" VARCHAR(25)   NOT NULL,
     "backers_count" INT   NOT NULL,
     "country" CHAR(2)   NOT NULL,
     "currency" CHAR(3)   NOT NULL,
-    "launch_date" DATETIME   NOT NULL,
-    "end_date" DATETIME   NOT NULL,
+    "launch_date" TIME   NOT NULL,
+    "end_date" TIME   NOT NULL,
     "category_id" VARCHAR(5)   NOT NULL,
     "subcategory_id" VARCHAR(10)   NOT NULL,
     CONSTRAINT "pk_compaign" PRIMARY KEY (
@@ -58,3 +58,9 @@ REFERENCES "categories" ("category_id");
 ALTER TABLE "compaign" ADD CONSTRAINT "fk_compaign_subcategory_id" FOREIGN KEY("subcategory_id")
 REFERENCES "subcategories" ("subcategory_id");
 
+
+-- verify data from database
+SELECT * FROM categories limit 10
+SELECT * FROM compaign limit 10
+SELECT * FROM contact limit 10
+SELECT * FROM subcategories limit 10
